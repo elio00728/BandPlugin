@@ -6,17 +6,26 @@ namespace WPCordovaClassLib.Cordova.Commands
     {
         public void ToUpper(string options)
         {
-            string upperCase = JSON.JsonHelper.Deserialize<string[]>(options)[0].ToUpper();
+            string title = "";
+            string message = "";
+
+            string[] args  = JSON.JsonHelper.Deserialize<string[]>(options);
+            title = args[0].ToString();
+            message = args[1].ToString();
+
+            MessageBox.Show(title+message);
+
             PluginResult result;
-            if (upperCase != "")
+            if (title != "" && message != "")
             {
-                result = new PluginResult(PluginResult.Status.OK, upperCase);
+                result = new PluginResult(PluginResult.Status.OK, args);
             } else
             {
-                result = new PluginResult(PluginResult.Status.ERROR, upperCase);
+                result = new PluginResult(PluginResult.Status.ERROR, args);
             }
 
             DispatchCommandResult(result);
         }
     }
 }
+
