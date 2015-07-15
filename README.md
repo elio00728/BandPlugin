@@ -1,31 +1,65 @@
 # ToUpperPlugin
 
+This code shows how to send a message from your Javascript to the native part of windows and to receive the  message back in your Javascript. 
 
-----------
+1- Add wp8 and windows platforms to your Cordova project:
 
-You just have to add this code to your html file:
+
+>cordova platforms add wp8
+>cordova paltforms add windows
+
+2- Add this plugin to your Cordova project:
+
+>cordova plugin add https://github.com/elio00728/ToUpperPlugin.git
+
+3- Modify your html file for this code:
 
 ```
-Input text: <input type="text" id="inputText" style="font-size: xx-large" /><br/>
-<button type="button" style="font-size: xx-large" onclick="toUpperClicked()">To Upper</button>
-<p id="toUpperResult"></p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>gitapachecordova</title>
 
-<script>
+    <!-- gitapachecordova references -->
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+<body>
 
-var successCallback = function (arguments) {
-        document.getElementById("toUpperResult").innerText =
-        'ToUpperPlugin successCallback ' + arguments[0];
-};
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
 
-var errorCallback = function (arguments) {
-    document.getElementById("toUpperResult").innerText =
-        'ToUpperPlugin errorCallback ' + arguments[0];
-};
+    <script src="scripts/index.js"></script>
 
-function toUpperClicked() {
-    ToUpperPlugin.ToUpper(successCallback, errorCallback,
-        document.getElementById("inputText").value);
-}
+    <script>
+                var successCallback = function (arguments) {
+                        document.getElementById("toUpperResult").innerText =
+                        'Plugin success: ' + arguments[0] + arguments[1];
+                        document.getElementById("checked").innerText = "Received it!";
+                };
 
-</script>
+                var errorCallback = function (arguments) {
+                    document.getElementById("toUpperResult").innerText =
+                        'Plugin error ' + arguments[0] + arguments[1];
+                };
+
+                function toUpperClicked() {
+                    document.getElementById("checked").innerText = "Send it!";
+                    ToUpperPlugin.ToUpper(successCallback, errorCallback,
+                        document.getElementById("title").value, document.getElementById("message").value);
+                }
+    </script>
+    Title: <input type="text" id="title" style="font-size: xx-large" /><br />
+    Message: <input type="text" id="message" style="font-size: xx-large" /><br />
+    <button type="button" style="font-size: xx-large" onclick="toUpperClicked()">Send</button>
+    <p id="checked"></p>
+    <p id="toUpperResult"></p>
+    
+       
+</body>
+</html>
+
+
+
 ```
