@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Example</title>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="plugins/SamplePlugin.js"></script>
+		<script>
+			function Device() 
+			{
+                document.addEventListener('deviceready', onDeviceReady, false);
+            }
+
+            function onDeviceReady() {
+				alert("device ready");
+            }
+            
+            function connection_band() {
+            	var title = document.getElementById("title").value;
+			    var text = document.getElementById("text").value;
+            	window.connection(title,text, function(result) { alert("Result:" + result); }, function(err) { alert(err); });
+            }
+            
+            function notification_band() {
+                var title = document.getElementById("title").value;
+			    var text = document.getElementById("text").value;
+
+               window.notification(title,text, function(result) { alert("Result:" + result); }, function(err) { alert(err); });
+            }
+            function delete_tile() {
+            
+            	window.delete(title,text, function(result) { alert("Delete ok"); }, function(err) { alert("error delete"); });
+            }
+     		</script>
+    </head>
+
+    <body onload="Device()">
+        <h1>Sample plugin</h1>
+        
+        <input type="button" value="Connect" onclick="connection_band()"><br>
+        <h3>Title:</h3>
+        <input type="text" id="title" /><br>
+         <h3>Message:</h3>
+		<input type="text" id="text" />
+  		<input type="button" value="Send Notification" onclick="notification_band()"><br>
+  		<br>
+  		<br>
+  		<input type="button" value="Delete tile" onclick="delete_tile()"><br>
+				        
+    </body>
+</html>
