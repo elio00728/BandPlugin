@@ -1,4 +1,4 @@
-# ToUpperPlugin
+# SamplePlugin
 
 This code shows how to send a message from your Javascript to the native part of windows and to receive the  message back in your Javascript. 
 
@@ -10,7 +10,7 @@ This code shows how to send a message from your Javascript to the native part of
 
 2- Add this plugin to your Cordova project:
 
->cordova plugin add https://github.com/elio00728/ToUpperPlugin.git
+>cordova plugin add https://github.com/elio00728/SamplePlugin.git
 
 3- Modify your html file for this code:
 
@@ -34,27 +34,27 @@ This code shows how to send a message from your Javascript to the native part of
 
     <script>
                 var successCallback = function (arguments) {
-                        document.getElementById("toUpperResult").innerText =
+                        document.getElementById("sampleResult").innerText =
                         'Plugin success: ' + arguments[0] + arguments[1];
                         document.getElementById("checked").innerText = "Received it!";
                 };
 
                 var errorCallback = function (arguments) {
-                    document.getElementById("toUpperResult").innerText =
+                    document.getElementById("sampleResult").innerText =
                         'Plugin error ' + arguments[0] + arguments[1];
                 };
 
-                function toUpperClicked() {
+                function sampleClicked() {
                     document.getElementById("checked").innerText = "Send it!";
-                    ToUpperPlugin.ToUpper(successCallback, errorCallback,
+                    SamplePlugin.Sample(successCallback, errorCallback,
                         document.getElementById("title").value, document.getElementById("message").value);
                 }
     </script>
     Title: <input type="text" id="title" style="font-size: xx-large" /><br />
     Message: <input type="text" id="message" style="font-size: xx-large" /><br />
-    <button type="button" style="font-size: xx-large" onclick="toUpperClicked()">Send</button>
+    <button type="button" style="font-size: xx-large" onclick="sampleClicked()">Send</button>
     <p id="checked"></p>
-    <p id="toUpperResult"></p>
+    <p id="sampleResult"></p>
     
        
 </body>
