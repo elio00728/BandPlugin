@@ -2,9 +2,9 @@ using System;
 
 namespace WPCordovaClassLib.Cordova.Commands
 {
-    public class SamplePlugin : BaseCommand
+    public class BandPlugin : BaseCommand
     {
-        public void Sample(string options)
+        public void Band(string options)
         {
             string title = "";
             string message = "";
@@ -12,8 +12,6 @@ namespace WPCordovaClassLib.Cordova.Commands
             string[] args  = JSON.JsonHelper.Deserialize<string[]>(options);
             title = args[0].ToString();
             message = args[1].ToString();
-
-            MessageBox.Show(title+message);
 
             PluginResult result;
             if (title != "" && message != "")
@@ -28,4 +26,6 @@ namespace WPCordovaClassLib.Cordova.Commands
         }
     }
 }
+
+
 
