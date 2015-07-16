@@ -2,31 +2,31 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
       id="com.delaware.elv"
       version="0.1.0">
-    <name>SamplePlugin</name>
-    <description>Sample plugin for Apache Cordova</description>
+    <name>BandPlugin</name>
+    <description>Band plugin for Apache Cordova</description>
     <license>MIT</license>
     <keywords></keywords>
     <repo></repo>
     <issue></issue>
 
-    <js-module src="www/SamplePlugin.js" name="SamplePlugin">
-        <clobbers target="SamplePlugin" />
+    <js-module src="www/BandPlugin.js" name="BandPlugin">
+        <clobbers target="BandPlugin" />
     </js-module>
 
     <!-- wp8 -->
     <platform name="wp8">
         <config-file target="config.xml" parent="/*">
-            <feature name="SamplePlugin">
-                <param name="wp-package" value="SamplePlugin"/>
+            <feature name="BandPlugin">
+                <param name="wp-package" value="BandPlugin"/>
             </feature>
         </config-file>
 
-        <source-file src="src/wp/SamplePlugin.cs" />
+        <source-file src="src/wp/BandPlugin.cs" />
     </platform>
 
     <!-- windows -->
     <platform name="windows">
-        <js-module src="src/windows/SamplePluginProxy.js" name="SamplePluginProxy">
+        <js-module src="src/windows/BandPluginProxy.js" name="BandPluginProxy">
             <merges target="" />
         </js-module>
     </platform>
