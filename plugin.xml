@@ -30,5 +30,18 @@
             <merges target="" />
         </js-module>
     </platform>
+    
+      <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BandPlugin">
+                <param name="android-package" value="com.delaware.elv.BandPlugin"/>
+            </feature>
+        </config-file>
+            <source-file src="src/android/BandPlugin.java" target-dir="src/android/"/>
+        <js-module src="www/android/plugins/SamplePlugin.js" name="SamplePlugin">
+        </js-module>
+
+     </platform>
 
 </plugin>
