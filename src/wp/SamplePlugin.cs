@@ -2,9 +2,9 @@ using System;
 
 namespace WPCordovaClassLib.Cordova.Commands
 {
-    public class ToUpperPlugin : BaseCommand
+    public class SamplePlugin : BaseCommand
     {
-        public void ToUpper(string options)
+        public void Sample(string options)
         {
             string title = "";
             string message = "";
