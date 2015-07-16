@@ -52,7 +52,7 @@ This code shows how to send a message from your Javascript to the native part of
     </script>
     Title: <input type="text" id="title" style="font-size: xx-large" /><br />
     Message: <input type="text" id="message" style="font-size: xx-large" /><br />
-    <button type="button" style="font-size: xx-large" onclick="BandrClicked()">Send</button>
+    <button type="button" style="font-size: xx-large" onclick="BandClicked()">Send</button>
     <p id="checked"></p>
     <p id="BandResult"></p>
     
