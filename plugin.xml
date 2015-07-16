@@ -39,8 +39,6 @@
             </feature>
         </config-file>
             <source-file src="src/android/BandPlugin.java" target-dir="src/com/mypackage"/>
-            <source-file src="src/android/microsoft-band-1.3.10428.1.jar" target-dir="libs" framework="true" />    
-            <source-file src="src/android/microsoft-band-1.3.10428.1-javadoc.jar" target-dir="libs" framework="true" />
         <js-module src="www/android/plugins/SamplePlugin.js" name="SamplePlugin">
         </js-module>
 
