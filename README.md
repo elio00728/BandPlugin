@@ -1,4 +1,4 @@
-# SamplePlugin
+# BandPlugin
 
 This code shows how to send a message from your Javascript to the native part of windows and to receive the  message back in your Javascript. 
 
@@ -10,7 +10,7 @@ This code shows how to send a message from your Javascript to the native part of
 
 2- Add this plugin to your Cordova project:
 
->cordova plugin add https://github.com/elio00728/SamplePlugin.git
+>cordova plugin add https://github.com/elio00728/BandPlugin.git
 
 3- Modify your html file for this code:
 
@@ -34,31 +34,34 @@ This code shows how to send a message from your Javascript to the native part of
 
     <script>
                 var successCallback = function (arguments) {
-                        document.getElementById("sampleResult").innerText =
+                        document.getElementById("BandResult").innerText =
                         'Plugin success: ' + arguments[0] + arguments[1];
                         document.getElementById("checked").innerText = "Received it!";
                 };
 
                 var errorCallback = function (arguments) {
-                    document.getElementById("sampleResult").innerText =
+                    document.getElementById("BandResult").innerText =
                         'Plugin error ' + arguments[0] + arguments[1];
                 };
 
-                function sampleClicked() {
+                function BandClicked() {
                     document.getElementById("checked").innerText = "Send it!";
-                    SamplePlugin.Sample(successCallback, errorCallback,
+                    BandPlugin.Band(successCallback, errorCallback,
                         document.getElementById("title").value, document.getElementById("message").value);
                 }
     </script>
     Title: <input type="text" id="title" style="font-size: xx-large" /><br />
     Message: <input type="text" id="message" style="font-size: xx-large" /><br />
-    <button type="button" style="font-size: xx-large" onclick="sampleClicked()">Send</button>
+    <button type="button" style="font-size: xx-large" onclick="BandrClicked()">Send</button>
     <p id="checked"></p>
-    <p id="sampleResult"></p>
+    <p id="BandResult"></p>
     
        
 </body>
 </html>
+
+
+
 
 
 
