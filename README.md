@@ -36,7 +36,7 @@ This code shows how to send a message from your Javascript to the native part of
     <script>
                 var successCallback = function (arguments) {
                         document.getElementById("BandResult").innerText =
-                        'Plugin success: ' + arguments[0] + arguments[1];
+                        'Plugin success: ' + arguments[0];
                         document.getElementById("checked").innerText = "Received it!";
                 };
 
