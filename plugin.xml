@@ -38,7 +38,7 @@
                 <param name="android-package" value="com.delaware.elv"/>
             </feature>
         </config-file>
-            <source-file src="src/android/BandPlugin.java" target-dir="src/com/mypackage"/>
+            <source-file src="src/android/BandPlugin.java" target-dir="src/com/delaware/elv"/>
         <js-module src="www/android/plugins/SamplePlugin.js" name="SamplePlugin">
         </js-module>
 
