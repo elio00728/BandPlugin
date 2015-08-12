@@ -5,7 +5,7 @@ This code shows how to send a message from your Javascript to the native part of
 1- Add wp8 and windows platforms to your Cordova project:
 
 
->cordova paltforms add windows
+>cordova platforms add windows
 
 2- Add this plugin to your Cordova project:
 
